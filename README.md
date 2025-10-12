@@ -10,12 +10,13 @@
 **IMAGEdit: Let Any Subject Transform [[Project](https://muzishen.github.io/IMAGEdit/)] [[Code](https://github.com/XWH-A/IMAGEdit)]** <br />  
 [Fei Shen](https://muzishen.github.io/), [Weihao Xu](https://github.com/XWH-A/), [Rui Yan](https://ruiyan1995.github.io/), [Dong Zhang](https://dongzhang89.github.io/), [Xiangbo Shu](https://shuxb104.github.io/), [Jinhui Tang](https://scholar.google.com/citations?user=ByBLlEwAAAAJ&hl=en) <br />
 
-![](asset/2.png)
+![](asset/1.png)
 
 
 ---
 
 ## 📅 Release
+- [2025/10/13] 🎉 We release the Inference code and Evaluate metric code.
 - [2025/10/01] 🎉 We launch the [project page](https://muzishen.github.io/IMAGEdit/) of IMAGEdit.
 
 ---
@@ -216,34 +217,42 @@ IMAGEdit is **plug-and-play** with a wide range of backbones and consistently im
 
 
 ## 🔧 Requirements
-
-- Python >= 3.8 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html))
+Our method is tested using CUDA 12.2/12.4, Python 3.10.13, and PyTorch >= 2.5.1 on a single A800.
+<!-- - Python >= 3.8 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html))
 - [PyTorch >= 2.0.0](https://pytorch.org/)
-- cuda==11.8
+- cuda==12.2 -->
 
 ```bash
-coming soon
+git clone https://github.com/XWH-A/IMAGEdit.git
+cd IMAGEdit
+pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+pip install -r requirements.txt
 ```
+If you want to use the Evaluate metric code, you need to additionally configure [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO).
+
 
 ---
 
 
-## 🌐 Download Models
-coming soon
+## 🌐 Download Weights
+The required weights can be downloaded from Hugging Face. Below is a list of the weights you need to download, along with the links.
+- [stable-diffusion-xl-base-1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0)
+- [Video-Depth-Anything-Large](https://huggingface.co/depth-anything/Video-Depth-Anything-Large)
+- [Qwen2.5-VL-32B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct)
+- [Wan2.1-VACE-1.3B](https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B)
 
 
 ## 🎉 How to Use
 
 ### <span style="color:red">Important Reminder</span>
-
-
+Before executing the following command, you should first modify the path in the run.sh file to your own correct path.
 ```sh
-coming soon
+bash run.sh
 ```
-
+If you want to make your own data for testing, we recommend you use [Grounded-SAM-2](https://github.com/IDEA-Research/Grounded-SAM-2) to make your video mask.
 
 ## 🙏 Acknowledgement
-We thank the contributors of [WAN](https://github.com/Wan-Video/Wan2.1), [VACE](https://github.com/ali-vilab/VACE), for their open research and inspiration.  
+We thank the contributors of [WAN](https://github.com/Wan-Video/Wan2.1), [VACE](https://github.com/ali-vilab/VACE),[SDXL](https://github.com/Stability-AI/generative-models),[Qwen-VL](https://github.com/QwenLM/Qwen-VL),[Grounded-SAM-2](https://github.com/IDEA-Research/Grounded-SAM-2),[Depth-Anything-V2](https://github.com/DepthAnything/Depth-Anything-V2), for their open research and inspiration.  
 
 The IMAGEdit code is released for **academic use**. Users must comply with local laws and take responsibility for their own generations. The authors disclaim liability for misuse.  
 
@@ -269,8 +278,8 @@ If you find IMAGEdit useful for your research, please cite:
 <!-- - [x] Support inpaint -->
 <!-- - [ ] Model weights (More higher sized version) -->
 - [x] Paper
-- [ ] Inference Code
-- [ ] Evaluate metric code
+- [x] Inference Code
+- [x] Evaluate metric code
 - [ ] MSVBench dataset
 - [ ] Others, such as User-Needed Requirements
 <!-- - [x] Training code -->
