@@ -2,7 +2,7 @@
 
 [![Project Page](https://img.shields.io/badge/Project-Page-green)](https://muzishen.github.io/IMAGEdit/)
 [![Technique Report](https://img.shields.io/badge/Technique-Report-red)](https://arxiv.org/pdf/2510.01186)
-[![Dataset MSVBench](https://img.shields.io/badge/Dataset-MSVBench-orange)](https://muzishen.github.io/IMAGEdit/)
+[![Dataset MSVBench](https://img.shields.io/badge/Dataset-MSVBench-orange)](https://huggingface.co/datasets/happywork/MSVBench)
 [![GitHub stars](https://img.shields.io/github/stars/XWH-A/IMAGEdit?style=social)](https://github.com/XWH-A/IMAGEdit)
 
 ---
@@ -16,7 +16,7 @@
 ---
 
 ## 📅 Release
-- [2025/10/13] 🎉 We release the Inference code and Evaluate metric code.
+- [2025/10/13] 🎉 We release the Inference code, Evaluate metric code and MSVBench dataset.
 - [2025/10/01] 🎉 We launch the [project page](https://muzishen.github.io/IMAGEdit/) of IMAGEdit.
 
 ---
@@ -280,7 +280,7 @@ If you find IMAGEdit useful for your research, please cite:
 - [x] Paper
 - [x] Inference Code
 - [x] Evaluate metric code
-- [ ] MSVBench dataset
+- [x] MSVBench dataset
 - [ ] Others, such as User-Needed Requirements
 <!-- - [x] Training code -->
 <!-- - [ ] Video Dressing -->
