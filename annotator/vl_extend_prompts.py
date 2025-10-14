@@ -119,7 +119,7 @@ Now rewrite the following prompt directly in English, preserving original semant
     finally:
         unload_model()
 
-# 使用示例
+
 if __name__ == "__main__":
     enhanced2 = enhance_prompt("Two iron-men jumping rope.", "/opt/data/private/video_edit/VACE_formal/MSED/ref_images/Iron Man.png",)
     print("Enhanced:", enhanced2)
