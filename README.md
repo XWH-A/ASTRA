@@ -1,4 +1,4 @@
-# 🎬ASTRA🎬: Let Any Subject Transform
+# 🎬ASTRA🎬: Let Arbitrary Subjects Transform in Video Editing
 
 [![Project Page](https://img.shields.io/badge/Project-Page-green)](https://muzishen.github.io/ASTRA/)
 [![Technique Report](https://img.shields.io/badge/Technique-Report-red)](https://arxiv.org/pdf/2510.01186)
@@ -7,8 +7,8 @@
 
 ---
 
-**ASTRA: Let Any Subject Transform [[Project](https://muzishen.github.io/ASTRA/)] [[Code](https://github.com/XWH-A/ASTRA)]** <br />  
-[Fei Shen](https://muzishen.github.io/), [Weihao Xu](https://github.com/XWH-A/), [Rui Yan](https://ruiyan1995.github.io/), [Dong Zhang](https://dongzhang89.github.io/), [Xiangbo Shu](https://shuxb104.github.io/), [Jinhui Tang](https://scholar.google.com/citations?user=ByBLlEwAAAAJ&hl=en) <br />
+**ASTRA: Let Arbitrary Subjects Transform in Video Editing [[Project](https://muzishen.github.io/ASTRA/)] [[Code](https://github.com/XWH-A/ASTRA)]** <br />  
+[Fei Shen](https://muzishen.github.io/), [Weihao Xu](https://github.com/XWH-A/), [Rui Yan](https://ruiyan1995.github.io/), [Dong Zhang](https://dongzhang89.github.io/), [Xiangbo Shu](https://shuxb104.github.io/), [Jinhui Tang](https://scholar.google.com/citations?user=ByBLlEwAAAAJ&hl=en), Maocheng Zhao <br />
 
 ![](asset/ASTRA_teaser.png)
 
@@ -22,21 +22,21 @@
 ---
 
 ## 🚀 Key Features
-1. **Training-Free & Plug-and-Play**: ASTRA requires no additional training and can be seamlessly integrated into existing mask-driven video editing backbones.  
-2. **Prompt-Guided Multimodal Alignment**: Aligns user prompts with visual semantics to ensure accurate subject replacement and category transformation.  
-3. **Prior-Based Mask Retargeting**: Leverages depth and temporal priors to generate smooth, time-consistent mask motion sequences, even in crowded scenes.  
-4. **Robust Any-Subject Editing**: Supports flexible editing for single or multiple subjects while preserving background and maintaining temporal coherence across frames.
+1. **Training-Free, Arbitrary Subjects**: **ASTRA** (**a**rbitrary-**s**ubjects **t**raining-free **r**etargeting and **a**lignment) transforms any number of designated subjects in open-domain video **without finetuning or retraining**, while strictly preserving the background and non-target regions.  
+2. **Prompt-Guided Multimodal Alignment**: Leverages large foundation models—e.g., a text-to-image prior plus a vision–language model—to produce **aligned multimodal conditions** (augmented text and visual instructions), mitigating **insufficient prompt-side conditioning** and **attention dilution** in dense, multi-subject layouts.  
+3. **Prior-Based Mask Retargeting**: Tracks per-frame mask state transitions to obtain **temporally coherent mask motion** that follows source dynamics, alleviating **mask boundary entanglement** and **attribute leakage** under heavy occlusion and crowded scenes.  
+4. **Plug-and-Play with Mask-Driven Video Models**: Drop-in compatible with diverse **mask-driven video generators**; on **MSVBench** (100 challenging sequences spanning varying subject counts and interactions), ASTRA **consistently surpasses** strong baselines in multi-subject editing.
 
 ---
 
 ## 💡 Introduction
-We present **ASTRA**, a training-free framework for video editing with any number of subjects that changes designated categories. ASTRA provides robust multimodal conditioning and precise mask motion sequences through two key components:  
-- a **prompt-guided multimodal alignment module** and  
-- a **prior-based mask retargeting module**.  
+Generative models have advanced video editing, yet many methods still focus on **single or few subjects** and degrade in **complex multi-subject** settings. In dense layouts with **heavy occlusions**, common failure modes include **mask boundary entanglement**, **attention dilution**, **attribute leakage**, and **temporal instability**—edits bleed across instances or drift away from the text prompt.
 
-By leveraging the understanding and generation capabilities of large pretrained models, these components produce aligned multimodal signals and time-consistent masks that effectively remedy insufficient prompt-side conditioning and overcome mask boundary entanglement in crowded scenes. The framework then conditions a pretrained mask-driven video generator to synthesize the edited video.  
+We present **ASTRA** (**a**rbitrary-**s**ubjects **t**raining-free **r**etargeting and **a**lignment), a framework for **mask-driven, text-guided** editing where **an arbitrary number** of designated subjects are transformed while the background and non-target regions stay intact—**with no model finetuning**. ASTRA couples two modules with a pretrained mask-driven video generator:  
+- **Prompt-guided multimodal alignment** isolates target subjects in the prompt, queries a visual prior from a text-to-image model, and uses a vision–language model to fuse prompt and prior into **strong multimodal conditioning**.  
+- **Prior-based mask retargeting** propagates masks over time so that **mask motion** stays consistent with the source video, reducing entanglement-driven errors.  
 
-ASTRA is **plug-and-play** with a wide range of backbones and consistently improves overall performance. Extensive experiments on the new **multi-subject benchmark MSVBench** verify that ASTRA surpasses state-of-the-art methods.
+These conditions and mask sequences are fed into the generator to synthesize the edited video. ASTRA is a **versatile plug-in** for different mask-driven backbones. We also introduce **MSVBench**, a multi-subject benchmark of **100** challenging clips covering diverse subject counts, interactions, and scene complexity; experiments show ASTRA **consistently outperforms** state-of-the-art methods. Code, models, and data are available at [this repository](https://github.com/XWH-A/ASTRA).
 
 ---
 
@@ -262,11 +262,12 @@ The ASTRA code is released for **academic use**. Users must comply with local la
 If you find ASTRA useful for your research, please cite:  
 
 ```bibtex
-@article{shen2025astra,
-  title={ASTRA: Let Any Subject Transform},
-  author={Shen, Fei and Xu, Weihao and Yan, Rui and Zhang, Dong and Shu, Xiangbo and Tang, Jinhui},
-  journal={arXiv preprint arXiv:2510.01186},
-  year={2025}
+@article{shen2026astra,
+  title={{ASTRA}: Let Arbitrary Subjects Transform in Video Editing},
+  author={Shen, Fei and Xu, Weihao and Yan, Rui and Zhang, Dong and Shu, Xiangbo and Tang, Jinhui and Zhao, Maocheng},
+  journal={IEEE Transactions on Multimedia},
+  year={2026},
+  note={arXiv:2510.01186}
 }
 
 ```
@@ -286,7 +287,7 @@ If you find ASTRA useful for your research, please cite:
 <!-- - [ ] Video Dressing -->
 
 ## 👉 **Our other projects:**  
-- [ASTRA](https://github.com/XWH-A/ASTRA): Training-Free Controllable Video Editing with Consistent Object Layout.  [可控多目标视频编辑]
+- [ASTRA](https://github.com/XWH-A/ASTRA): Arbitrary-subject, training-free video editing with multimodal alignment and mask retargeting (MSVBench). [多主体视频编辑 / 免训练对齐与掩码重定向]
 - [IMAGDressing](https://github.com/muzishen/IMAGDressing): Controllable dressing generation. [可控穿衣生成]
 - [IMAGGarment](https://github.com/muzishen/IMAGGarment): Fine-grained controllable garment generation.  [可控服装生成]
 - [IMAGHarmony](https://github.com/muzishen/IMAGHarmony): Controllable image editing with consistent object layout.  [可控多目标图像编辑]
