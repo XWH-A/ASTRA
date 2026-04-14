@@ -22,21 +22,21 @@
 ---
 
 ## 🚀 Key Features
-1. **Training-Free, Arbitrary Subjects**: **ASTRA** (**a**rbitrary-**s**ubjects **t**raining-free **r**etargeting and **a**lignment) transforms any number of designated subjects in open-domain video **without finetuning or retraining**, while strictly preserving the background and non-target regions.  
-2. **Prompt-Guided Multimodal Alignment**: Leverages large foundation models—e.g., a text-to-image prior plus a vision–language model—to produce **aligned multimodal conditions** (augmented text and visual instructions), mitigating **insufficient prompt-side conditioning** and **attention dilution** in dense, multi-subject layouts.  
-3. **Prior-Based Mask Retargeting**: Tracks per-frame mask state transitions to obtain **temporally coherent mask motion** that follows source dynamics, alleviating **mask boundary entanglement** and **attribute leakage** under heavy occlusion and crowded scenes.  
-4. **Plug-and-Play with Mask-Driven Video Models**: Drop-in compatible with diverse **mask-driven video generators**; on **MSVBench** (100 challenging sequences spanning varying subject counts and interactions), ASTRA **consistently surpasses** strong baselines in multi-subject editing.
+1. Training-Free, Arbitrary Subjects: **ASTRA** (arbitrary-subjects training-free retargeting and alignment) transforms any number of designated subjects in open-domain video without finetuning or retraining, while strictly preserving the background and non-target regions.  
+2. Prompt-Guided Multimodal Alignment: Leverages large foundation models—e.g., a text-to-image prior plus a vision–language model—to produce aligned multimodal conditions (augmented text and visual instructions), mitigating insufficient prompt-side conditioning and attention dilution in dense, multi-subject layouts.  
+3. Prior-Based Mask Retargeting: Tracks per-frame mask state transitions to obtain temporally coherent mask motion that follows source dynamics, alleviating mask boundary entanglement and attribute leakage under heavy occlusion and crowded scenes.  
+4. Plug-and-Play with Mask-Driven Video Models: Drop-in compatible with diverse mask-driven video generators; on MSVBench (100 challenging sequences spanning varying subject counts and interactions), **ASTRA** consistently surpasses strong baselines in multi-subject editing.
 
 ---
 
 ## 💡 Introduction
-Generative models have advanced video editing, yet many methods still focus on **single or few subjects** and degrade in **complex multi-subject** settings. In dense layouts with **heavy occlusions**, common failure modes include **mask boundary entanglement**, **attention dilution**, **attribute leakage**, and **temporal instability**—edits bleed across instances or drift away from the text prompt.
+Generative models have advanced video editing, yet many methods still focus on single or few subjects and degrade in complex multi-subject settings. In dense layouts with heavy occlusions, common failure modes include mask boundary entanglement, attention dilution, attribute leakage, and temporal instability—edits bleed across instances or drift away from the text prompt.
 
-We present **ASTRA** (**a**rbitrary-**s**ubjects **t**raining-free **r**etargeting and **a**lignment), a framework for **mask-driven, text-guided** editing where **an arbitrary number** of designated subjects are transformed while the background and non-target regions stay intact—**with no model finetuning**. ASTRA couples two modules with a pretrained mask-driven video generator:  
-- **Prompt-guided multimodal alignment** isolates target subjects in the prompt, queries a visual prior from a text-to-image model, and uses a vision–language model to fuse prompt and prior into **strong multimodal conditioning**.  
-- **Prior-based mask retargeting** propagates masks over time so that **mask motion** stays consistent with the source video, reducing entanglement-driven errors.  
+We present **ASTRA** (arbitrary-subjects training-free retargeting and alignment), a framework for mask-driven, text-guided editing where an arbitrary number of designated subjects are transformed while the background and non-target regions stay intact—with no model finetuning. **ASTRA** couples two modules with a pretrained mask-driven video generator:  
+- Prompt-guided multimodal alignment isolates target subjects in the prompt, queries a visual prior from a text-to-image model, and uses a vision–language model to fuse prompt and prior into strong multimodal conditioning.  
+- Prior-based mask retargeting propagates masks over time so that mask motion stays consistent with the source video, reducing entanglement-driven errors.  
 
-These conditions and mask sequences are fed into the generator to synthesize the edited video. ASTRA is a **versatile plug-in** for different mask-driven backbones. We also introduce **MSVBench**, a multi-subject benchmark of **100** challenging clips covering diverse subject counts, interactions, and scene complexity; experiments show ASTRA **consistently outperforms** state-of-the-art methods. Code, models, and data are available at [this repository](https://github.com/XWH-A/ASTRA).
+These conditions and mask sequences are fed into the generator to synthesize the edited video. **ASTRA** is a versatile plug-in for different mask-driven backbones. We also introduce MSVBench, a multi-subject benchmark of 100 challenging clips covering diverse subject counts, interactions, and scene complexity; experiments show **ASTRA** consistently outperforms state-of-the-art methods. Code, models, and data are available at [this repository](https://github.com/XWH-A/ASTRA).
 
 ---
 
