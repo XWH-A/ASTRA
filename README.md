@@ -1,42 +1,42 @@
-# 🎬IMAGEdit🎬: Let Any Subject Transform
+# 🎬ASTRA🎬: Let Any Subject Transform
 
-[![Project Page](https://img.shields.io/badge/Project-Page-green)](https://muzishen.github.io/IMAGEdit/)
+[![Project Page](https://img.shields.io/badge/Project-Page-green)](https://muzishen.github.io/ASTRA/)
 [![Technique Report](https://img.shields.io/badge/Technique-Report-red)](https://arxiv.org/pdf/2510.01186)
 [![Dataset MSVBench](https://img.shields.io/badge/Dataset-MSVBench-orange)](https://huggingface.co/datasets/happywork/MSVBench)
-[![GitHub stars](https://img.shields.io/github/stars/XWH-A/IMAGEdit?style=social)](https://github.com/XWH-A/IMAGEdit)
+[![GitHub stars](https://img.shields.io/github/stars/XWH-A/ASTRA?style=social)](https://github.com/XWH-A/ASTRA)
 
 ---
 
-**IMAGEdit: Let Any Subject Transform [[Project](https://muzishen.github.io/IMAGEdit/)] [[Code](https://github.com/XWH-A/IMAGEdit)]** <br />  
+**ASTRA: Let Any Subject Transform [[Project](https://muzishen.github.io/ASTRA/)] [[Code](https://github.com/XWH-A/ASTRA)]** <br />  
 [Fei Shen](https://muzishen.github.io/), [Weihao Xu](https://github.com/XWH-A/), [Rui Yan](https://ruiyan1995.github.io/), [Dong Zhang](https://dongzhang89.github.io/), [Xiangbo Shu](https://shuxb104.github.io/), [Jinhui Tang](https://scholar.google.com/citations?user=ByBLlEwAAAAJ&hl=en) <br />
 
-![](asset/1.png)
+![](asset/ASTRA_teaser.png)
 
 
 ---
 
 ## 📅 Release
 - [2025/10/13] 🎉 We release the Inference code, Evaluate metric code and MSVBench dataset.
-- [2025/10/01] 🎉 We launch the [project page](https://muzishen.github.io/IMAGEdit/) of IMAGEdit.
+- [2025/10/01] 🎉 We launch the [project page](https://muzishen.github.io/ASTRA/) of ASTRA.
 
 ---
 
 ## 🚀 Key Features
-1. **Training-Free & Plug-and-Play**: IMAGEdit requires no additional training and can be seamlessly integrated into existing mask-driven video editing backbones.  
+1. **Training-Free & Plug-and-Play**: ASTRA requires no additional training and can be seamlessly integrated into existing mask-driven video editing backbones.  
 2. **Prompt-Guided Multimodal Alignment**: Aligns user prompts with visual semantics to ensure accurate subject replacement and category transformation.  
 3. **Prior-Based Mask Retargeting**: Leverages depth and temporal priors to generate smooth, time-consistent mask motion sequences, even in crowded scenes.  
-4. **Robust Any-Subject Editing**: Supports flexible editing for single or multiple subjects while preserving background and maintaining temporal coherence across frames.  
+4. **Robust Any-Subject Editing**: Supports flexible editing for single or multiple subjects while preserving background and maintaining temporal coherence across frames.
 
 ---
 
 ## 💡 Introduction
-We present **IMAGEdit**, a training-free framework for video editing with any number of subjects that changes designated categories. IMAGEdit provides robust multimodal conditioning and precise mask motion sequences through two key components:  
+We present **ASTRA**, a training-free framework for video editing with any number of subjects that changes designated categories. ASTRA provides robust multimodal conditioning and precise mask motion sequences through two key components:  
 - a **prompt-guided multimodal alignment module** and  
 - a **prior-based mask retargeting module**.  
 
 By leveraging the understanding and generation capabilities of large pretrained models, these components produce aligned multimodal signals and time-consistent masks that effectively remedy insufficient prompt-side conditioning and overcome mask boundary entanglement in crowded scenes. The framework then conditions a pretrained mask-driven video generator to synthesize the edited video.  
 
-IMAGEdit is **plug-and-play** with a wide range of backbones and consistently improves overall performance. Extensive experiments on the new **multi-subject benchmark MSVBench** verify that IMAGEdit surpasses state-of-the-art methods.  
+ASTRA is **plug-and-play** with a wide range of backbones and consistently improves overall performance. Extensive experiments on the new **multi-subject benchmark MSVBench** verify that ASTRA surpasses state-of-the-art methods.
 
 ---
 
@@ -46,13 +46,13 @@ IMAGEdit is **plug-and-play** with a wide range of backbones and consistently im
   <tr>
     <td align="center" width="450">
       <img src="asset/ori_720_16_gif/tuk-tuk_processed.gif" width="180"/>
-      <img src="asset/IMAGEdit_720_16_gif/tuk-tuk_processed.gif" width="180"/>
+      <img src="asset/ASTRA_720_16_gif/tuk-tuk_processed.gif" width="180"/>
       <br>
       <sub>Three [People -> Super Mario] sitting in car backseat.</sub>
     </td>
     <td align="center" width="450">
       <img src="asset/ori_720_16_gif/Football-Match-Start_processed.gif" width="180"/>
-      <img src="asset/IMAGEdit_720_16_gif/Football-Match-Start_processed.gif" width="180"/>
+      <img src="asset/ASTRA_720_16_gif/Football-Match-Start_processed.gif" width="180"/>
       <br>
       <sub>Four [People -> Robots] standing on football court.</sub>
     </td>
@@ -66,7 +66,7 @@ IMAGEdit is **plug-and-play** with a wide range of backbones and consistently im
     </td>
     <td align="center" width="450">
       <img src="asset/ori_720_16_gif/people-training-boxing-class_processed.gif" width="180"/>
-      <img src="asset/IMAGEdit_720_16_gif/people-training-boxing-class_processed.gif" width="180"/>
+      <img src="asset/ASTRA_720_16_gif/people-training-boxing-class_processed.gif" width="180"/>
       <br>
       <sub>A group of [People -> Astronauts] practicing boxing in a fitness studio.</sub>
     </td>
@@ -74,13 +74,13 @@ IMAGEdit is **plug-and-play** with a wide range of backbones and consistently im
   <tr>
     <td align="center" width="450">
       <img src="asset/ori_720_16_gif/team-rowing-on-river_processed2.gif" width="180"/>
-      <img src="asset/IMAGEdit_720_16_gif/team-rowing-on-river_processed2.gif" width="180"/>
+      <img src="asset/ASTRA_720_16_gif/team-rowing-on-river_processed2.gif" width="180"/>
       <br>
       <sub>A team of [Men -> Spider-Men] rowing together on a river.</sub>
     </td>
     <td align="center" width="450">
       <img src="asset/ori_720_16_gif/110m-Hurdles-Mid-Air-Dash_processed.gif" width="180"/>
-      <img src="asset/IMAGEdit_720_16_gif/110m-Hurdles-Mid-Air-Dash_processed.gif" width="180"/>
+      <img src="asset/ASTRA_720_16_gif/110m-Hurdles-Mid-Air-Dash_processed.gif" width="180"/>
       <br>
       <sub>Eight [Hurdlers -> Iron Men] leap mid-race over purple hurdles.</sub>
     </td>
@@ -223,8 +223,8 @@ Our method is tested using CUDA 12.2/12.4, Python 3.10.13, and PyTorch >= 2.5.1 
 - cuda==12.2 -->
 
 ```bash
-git clone https://github.com/XWH-A/IMAGEdit.git
-cd IMAGEdit
+git clone https://github.com/XWH-A/ASTRA.git
+cd ASTRA
 pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
 pip install -r requirements.txt
 ```
@@ -254,16 +254,16 @@ If you want to make your own data for testing, we recommend you use [Grounded-SA
 ## 🙏 Acknowledgement
 We thank the contributors of [WAN](https://github.com/Wan-Video/Wan2.1), [VACE](https://github.com/ali-vilab/VACE),[SDXL](https://github.com/Stability-AI/generative-models),[Qwen-VL](https://github.com/QwenLM/Qwen-VL),[Grounded-SAM-2](https://github.com/IDEA-Research/Grounded-SAM-2),[Depth-Anything-V2](https://github.com/DepthAnything/Depth-Anything-V2), for their open research and inspiration.  
 
-The IMAGEdit code is released for **academic use**. Users must comply with local laws and take responsibility for their own generations. The authors disclaim liability for misuse.  
+The ASTRA code is released for **academic use**. Users must comply with local laws and take responsibility for their own generations. The authors disclaim liability for misuse.  
 
 ---
 
 ## 📝 Citation
-If you find IMAGEdit useful for your research, please cite:  
+If you find ASTRA useful for your research, please cite:  
 
 ```bibtex
-@article{shen2025imagedit,
-  title={IMAGEdit: Let Any Subject Transform},
+@article{shen2025astra,
+  title={ASTRA: Let Any Subject Transform},
   author={Shen, Fei and Xu, Weihao and Yan, Rui and Zhang, Dong and Shu, Xiangbo and Tang, Jinhui},
   journal={arXiv preprint arXiv:2510.01186},
   year={2025}
@@ -286,7 +286,7 @@ If you find IMAGEdit useful for your research, please cite:
 <!-- - [ ] Video Dressing -->
 
 ## 👉 **Our other projects:**  
-- [IMAGEdit](https://github.com/XWH-A/IMAGEdit): Training-Free Controllable Video Editing with Consistent Object Layout.  [可控多目标视频编辑]
+- [ASTRA](https://github.com/XWH-A/ASTRA): Training-Free Controllable Video Editing with Consistent Object Layout.  [可控多目标视频编辑]
 - [IMAGDressing](https://github.com/muzishen/IMAGDressing): Controllable dressing generation. [可控穿衣生成]
 - [IMAGGarment](https://github.com/muzishen/IMAGGarment): Fine-grained controllable garment generation.  [可控服装生成]
 - [IMAGHarmony](https://github.com/muzishen/IMAGHarmony): Controllable image editing with consistent object layout.  [可控多目标图像编辑]
