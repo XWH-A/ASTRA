@@ -262,14 +262,15 @@ The ASTRA code is released for **academic use**. Users must comply with local la
 If you find ASTRA useful for your research, please cite:  
 
 ```bibtex
-@article{shen2026astra,
-  title={{ASTRA}: Let Arbitrary Subjects Transform in Video Editing},
-  author={Shen, Fei and Xu, Weihao and Yan, Rui and Zhang, Dong and Shu, Xiangbo and Tang, Jinhui and Zhao, Maocheng},
-  journal={IEEE Transactions on Multimedia},
-  year={2026},
-  note={arXiv:2510.01186}
+@misc{shen2026astraletarbitrarysubjects,
+      title={ASTRA: Let Arbitrary Subjects Transform in Video Editing}, 
+      author={Fei Shen and Weihao Xu and Rui Yan and Dong Zhang and Xiangbo Shu and Jinhui Tang and Maocheng Zhao},
+      year={2026},
+      eprint={2510.01186},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2510.01186}, 
 }
-
 ```
 
 ## 🕒 TODO List
